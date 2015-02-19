@@ -111,7 +111,7 @@ class FreelancerProjectsController extends \BaseController {
 	}
 
 	public function myproject($id){
-		$project = $this->gateway->byIdFromUser($id,Auth::user()->id);
+		$project = $this->gateway->byId($id);
 		return View::make('freelancer.projects.my.show')->with('project',$project);  
 	}
 }

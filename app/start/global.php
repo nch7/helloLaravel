@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader
@@ -82,6 +84,12 @@ App::error(function(Watson\Validating\ValidationException $e)
 App::error(function(SimpleValidationException $e){
 	Notification::error($e->getErrors());
     return Redirect::back()->withInput();
+});
+
+
+App::error(function(ModelNotFoundException $e)
+{
+    return Response::make('Not Found', 404); 
 });
 
 /*

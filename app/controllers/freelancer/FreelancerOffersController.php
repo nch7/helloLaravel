@@ -24,10 +24,9 @@ class FreelancerOffersController extends \BaseController {
  	public function hire($project_id,$offer_id){
  		
  		$user_id = Auth::user()->id;
- 		
+ 		debug($user_id,$project_id,$offer_id);
  		$resp = $this->gateway->hire($user_id,$project_id,$offer_id);
- 		debug($resp);
-
+ 		
  		if($resp){
  			Notification::success('Sucessfully hired!');
  		} else {

@@ -1,40 +1,27 @@
 @extends('freelancer.profile.layout')
+
 @section('feedback')
-	<div class="ibox margin-bottom">
-	<div class="ibox-title">
-		<h4>
-			temo
-		</h4>
-	</div>
-	<div class="ibox-content">
-		<p>asdlfkhsdkfj hask;fhg akfjgkl asjdnfkaj </p>
-	</div>
-</div>
+	Feedbacks
+	@if($user->offers->count()>0)
+		@foreach($user->offers as $offer)
+			<div class="ibox margin-bottom">
+				<div class="ibox-title">
+					<h4>
+						{{ $offer->project->title }} by {{ $offer->project->user->username }}
+					</h4>
+				</div>
+				<div class="ibox-content">
+					<p>{{ $offer->project->title }}</p>
+				</div>
+			</div>
+		@endforeach
+	@else
+		User has no feedbacks
+	@endif
 
-<div class="ibox margin-bottom">
-	<div class="ibox-title">
-		<h4>
-			tata
-		</h4>
-	</div>
-	<div class="ibox-content">
-		<p>asdlfkhsdkfj hask;fhg akfjgkl asjdnfkaj </p>
-	</div>
-</div>
-
-<div class="ibox margin-bottom">
-	<div class="ibox-title">
-		<h4>
-			nika
-		</h4>
-	</div>
-	<div class="ibox-content">
-		<p>asdlfkhsdkfj hask;fhg akfjgkl asjdnfkaj </p>
-	</div>
-</div>
 @stop
 
-@if($user->projects)
+@if($user->projects->count()>0)
 	@section('projects')
 		<ol class='no-list-style'>
 		@foreach($user->projects as $project)
@@ -42,6 +29,8 @@
 		@endforeach
 		</ol>
 	@stop
+@else
+	User has no projects
 @endif
 
 @if($github)

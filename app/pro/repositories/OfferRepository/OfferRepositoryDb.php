@@ -121,8 +121,8 @@ class OfferRepositoryDb implements OfferRepositoryInterface {
 		return $offers->get();
 	}
 
-	public function byUserId($id,$perpg = 25){ 
-		return Offer::with('user')->where('user_id',$id)->orderBy('created_at','desc')->paginate($perpg); 
+	public function byUserId($id){ 
+		return Offer::with('user','project','project.user')->where('user_id',$id)->orderBy('created_at','desc')->get(); 
 	}
 
 }

@@ -20,7 +20,10 @@ class ProjectGateway {
 
 	public function byId($id) {
 		return $this->ProjectRepo->byId($id);
+	}
 
+	public function byIdFromUser($id,$user_id) {
+		return $this->ProjectRepo->byId($id,['user_id'=>$user_id]);
 	}
 
 	public function create($input) {

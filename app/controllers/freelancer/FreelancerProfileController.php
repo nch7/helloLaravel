@@ -44,7 +44,7 @@ class FreelancerProfileController extends \BaseController {
 	{
 		$user = $this->gateway->byId($id);
 		$githubData = $this->gateway->getGithubData();
-		debug($githubData);
+		debug($user->feedbacks);
 		return View::make('freelancer.profile.show')->with(['user'=>$user,'github'=>$githubData]);
 	}
 

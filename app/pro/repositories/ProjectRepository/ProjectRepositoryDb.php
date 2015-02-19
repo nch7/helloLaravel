@@ -12,11 +12,9 @@ class ProjectRepositoryDb implements ProjectRepositoryInterface {
 		return $projects;
 	}
 
-	public function byId($id) {
-		// dd($id);
-		return Project::with(['user','comments','comments.user','offers','offers.user'])->find($id);
+	public function byId($id,$where=[]) {
+		return Project::where($where)->with(['user','comments','comments.user','offers','offers.user'])->findOrFail($id);
 	}
-
 	public function create($input) {
 		$project = new Project;
 		$project->fill($input);

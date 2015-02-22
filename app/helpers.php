@@ -1,5 +1,4 @@
 <?php
-	
 	function validate($input,$rules){
 		$Validator = Validator::make($input,$rules);
 

@@ -15,6 +15,8 @@
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ $user->username }}</strong>
                              </span> <span class="text-muted text-xs block">Actions <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="{{ URL::to('freelancer/profile') }}">My Profile</a></li>
+                                <li><a href="{{ URL::to('freelancer/profile/edit') }}">Edit Profile</a></li>
                                 <li><a href="{{ URL::to('logout') }}">Logout</a></li>
                             </ul>
                     </div>

@@ -33,7 +33,7 @@ class Project extends \Eloquent {
     }
 
     public function isNew(){
-    	if($this->created_at>=date('Y-m-d H:i:s',time()-25)){ 
+    	if($this->created_at>=date('Y-m-d H:i:s',time()-30)){ 
     		return true;
     	}
 

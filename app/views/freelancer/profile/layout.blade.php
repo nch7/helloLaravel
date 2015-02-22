@@ -18,9 +18,11 @@
 	<div class='col-xs-18'>
 		<div class="ibox border-bottom">
 			<div class='profile-container'>
-				<div class="ibox-title clearfix">
-					<h3>{{ $user->firstname }} {{ $user->lastname }}</h3>
-					<span>@section('name') @show </span>
+				<div class="ibox-title">
+					<div class='clearfix'>
+						<h3 class='pull-left'>{{ $user->firstname }} {{ $user->lastname }}</h3>
+						<div class='profile-email pull-left'>@section('name') @show </div>
+					</div>
 				</div>
 				<div class="ibox-content">
 					<p>{{ nl2br($user->bio) }}</p>
@@ -29,8 +31,24 @@
 			
 		</div>
 		@section('feedback')
-
-		@show
+			Feedbacks
+			@if($user->offers->count()>0)
+				@foreach($user->offers as $offer)
+					<div class="ibox margin-bottom">
+						<div class="ibox-title">
+							<h4>
+								{{ $offer->project->title }} by {{ $offer->project->user->username }}
+							</h4>
+						</div>
+						<div class="ibox-content">
+							<p>{{ $offer->project->title }}</p>
+						</div>
+					</div>
+				@endforeach
+			@else
+				User has no feedbacks
+			@endif
+		@stop
 
 		<div class = 'ibox border-bottom margin-top-big'>
 			<div class='ibox-title'>

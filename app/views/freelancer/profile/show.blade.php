@@ -1,26 +1,5 @@
 @extends('freelancer.profile.layout')
 
-@section('feedback')
-	Feedbacks
-	@if($user->offers->count()>0)
-		@foreach($user->offers as $offer)
-			<div class="ibox margin-bottom">
-				<div class="ibox-title">
-					<h4>
-						{{ $offer->project->title }} by {{ $offer->project->user->username }}
-					</h4>
-				</div>
-				<div class="ibox-content">
-					<p>{{ $offer->project->title }}</p>
-				</div>
-			</div>
-		@endforeach
-	@else
-		User has no feedbacks
-	@endif
-
-@stop
-
 @if($user->projects->count()>0)
 	@section('projects')
 		<ol class='no-list-style'>

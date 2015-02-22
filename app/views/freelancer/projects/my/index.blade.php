@@ -8,20 +8,27 @@
 	</div>
 	<div>
 		@foreach($projects as $project)
-			@if($project->isExpired())
-				<div class="panel panel-danger">
-			@elseif($project->isNew())
-				<div class="panel panel-success">
-			@else
-				<div class="panel panel-default">
-			@endif
-			  <div class="panel-heading clearfix">
-			    <h3 class="panel-title pull-left">{{ $project->title }} By {{ $project->user->firstname }} {{ $project->user->lastname }}</h3>
-			    <a class='btn btn-xs btn-primary pull-right' href='{{ URL::to("freelancer/projects/my",$project->id) }}'>View project</a>
-			  </div>
-			  <div class="panel-body">
-			    {{ $project->body }}
-			  </div>
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<div class='clearfix'>
+						<div class="pull-left">
+							<a href="{{ URL::to('freelancer/projects',$project->id) }}">{{ $project->title }}</a>
+						</div>
+						<div class="pull-right">
+							@if($project->isExpired())
+								<span class="label label-danger">Expired</span>
+							@elseif($project->isNew())
+								<span class="label label-success">New</span>
+							@else
+							<span class="label label-success">Expires: {{ $project->expires->diffForHumans() }}</span>
+								<span class="label label-primary">Active</span> 
+							@endif
+						</div>
+					</div>
+				</div>
+				<div class="ibox-content">
+					{{ $project->body }}
+				</div>
 			</div>
 		@endforeach
 	</div>

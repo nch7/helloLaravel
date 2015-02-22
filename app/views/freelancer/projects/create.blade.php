@@ -1,7 +1,7 @@
 @extends('layouts.freelancer.master')
 @section('body')
 <div class='ibox border-bottom'>
-	<div class='ibox-title collapse-link'>
+	<div class='ibox-title'>
 		<h5>Create new project</h5>
 	</div>
 	<div class='ibox-content'>

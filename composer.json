@@ -10,7 +10,8 @@
 		"watson/validating": "0.10.*@dev",
 		"edvinaskrucas/notification": "3.0.*",
 		"guzzle/guzzle": "~3.9",
-		"artdarek/oauth-4-laravel": "1.0.5"
+		"artdarek/oauth-4-laravel": "1.0.5",
+		"codesleeve/laravel-stapler": "1.0.*"
 	},
 	"require-dev": {
     	"way/generators": "~2.0",
@@ -48,5 +49,6 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "dev",
+	"prefer-stable" : true
 }

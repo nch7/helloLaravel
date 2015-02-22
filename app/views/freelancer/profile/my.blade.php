@@ -1,38 +1,5 @@
 @extends('freelancer.profile.layout')
-@section('feedback')
-	<div class="ibox margin-bottom">
-	<div class="ibox-title">
-		<h4>
-			temo
-		</h4>
-	</div>
-	<div class="ibox-content">
-		<p>asdlfkhsdkfj hask;fhg akfjgkl asjdnfkaj </p>
-	</div>
-</div>
 
-<div class="ibox margin-bottom">
-	<div class="ibox-title">
-		<h4>
-			tata
-		</h4>
-	</div>
-	<div class="ibox-content">
-		<p>asdlfkhsdkfj hask;fhg akfjgkl asjdnfkaj </p>
-	</div>
-</div>
-
-<div class="ibox margin-bottom">
-	<div class="ibox-title">
-		<h4>
-			nika
-		</h4>
-	</div>
-	<div class="ibox-content">
-		<p>asdlfkhsdkfj hask;fhg akfjgkl asjdnfkaj </p>
-	</div>
-</div>
-@stop
 @if($user->projects)
 	@section('projects')
 		<ol class='no-list-style'>
@@ -55,7 +22,7 @@
 			    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			    <h4 class="modal-title" id="edit-profileLabel">Edit Profile</h4>
 			  </div>
-			   {{ Form::open(array('url' => ['freelancer/profile'],'id' => 'form-edit', 'method' => 'put')) }}
+			   {{ Form::open(array('url' => ['freelancer/profile'],'id' => 'form-edit', 'method' => 'put', 'files' => true)) }}
 				  <div class="modal-body">
 
 				  	<div class="form-group">
@@ -84,6 +51,10 @@
 					<div class="form-group">
 						{{ Form::label('bio', 'Biography', ['class'=>'control-label']); }}
 						{{ Form::textarea('bio', $user->bio, ['class'=>'form-control']); }}
+					</div>
+					<div class="form-group">
+						{{ Form::label('avatar', 'Avatar', ['class'=>'control-label']); }}
+						{{ Form::file('avatar') }}
 					</div>
 				  </div>
 				  <div class="modal-footer">

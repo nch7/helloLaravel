@@ -47,7 +47,8 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
 		'pro\Repositories\RepositoryServiceProvider',
 		'Krucas\Notification\NotificationServiceProvider',
-		 'Artdarek\OAuth\OAuthServiceProvider'
+		'Artdarek\OAuth\OAuthServiceProvider',
+		'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider'
 
 	),
 

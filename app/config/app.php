@@ -124,8 +124,8 @@ return array(
 		'Atticmedia\Anvard\AnvardServiceProvider',
 		'pro\Repositories\RepositoryServiceProvider',
 		'Krucas\Notification\NotificationServiceProvider',
-		 'Artdarek\OAuth\OAuthServiceProvider'
-
+		'Artdarek\OAuth\OAuthServiceProvider',
+		'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider'
 	),
 
 	/*

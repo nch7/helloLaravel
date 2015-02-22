@@ -6,20 +6,36 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Codesleeve\Stapler\ORM\EloquentTrait;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
-	use UserTrait, RemindableTrait, SoftDeletingTrait, ValidatingTrait;
+class User extends Eloquent implements UserInterface, RemindableInterface,StaplerableInterface {
+	use UserTrait, RemindableTrait, SoftDeletingTrait, ValidatingTrait, EloquentTrait;
 
 
 	protected $table = 'users';
 	protected $hidden = array('password', 'remember_token');
-	protected $fillable = ['firstname', 'lastname', 'email','gender','github_token'];
+	protected $fillable = ['avatar','firstname', 'lastname', 'email','gender','github_token'];
 	protected $throwValidationExceptions = true;
 	protected $rules = [
         'username'   => 'required',
         'firstname'  => 'required',
-        'lastname'   => 'required'
+        'lastname'   => 'required',
+        'avatar'	=> ''
     ];
+
+    public function __construct(array $attributes = array()) {
+        $this->hasAttachedFile('avatar', [
+            'styles' => [
+                'thumbnail' => [
+			        'dimensions' => '50x50#',
+			        'convert_options' => ['jpeg_quality' => 100]
+			    ]
+            ]
+        ]);
+
+        parent::__construct($attributes);
+    }
 
 	public function integrations()
 	{

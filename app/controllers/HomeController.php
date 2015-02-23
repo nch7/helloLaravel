@@ -4,7 +4,7 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return 'Guest';
+		return view::make('home.index');
 	}
 
 }

@@ -13,7 +13,7 @@ class CourseRepositoryDb implements CourseRepositoryInterface {
 	}
 
 	public function byId($id) {
-		return Course::find($id);
+		return Course::findOrFail($id);
 	}
 
 	public function create($input) {

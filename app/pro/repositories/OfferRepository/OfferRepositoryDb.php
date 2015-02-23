@@ -13,7 +13,7 @@ class OfferRepositoryDb implements OfferRepositoryInterface {
 	}
 
 	public function byId($id,$with=['user']) {
-		return Offer::with($with)->find($id);
+		return Offer::with($with)->findOrFail($id);
 	}
 
 	public function create($input) {

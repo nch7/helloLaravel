@@ -16,8 +16,7 @@ class UserRepositoryDb implements UserRepositoryInterface {
 	}
 
 	public function byId($id) {
-		debug('byid');
-		return User::with(['offers'=>function($query){ $query->where('status', '=', '3'); }])->with(['courses','integrations'])->find($id);
+		return User::with(['offers'=>function($query){ $query->where('status', '=', '3'); }])->with(['courses','integrations'])->findOrFail($id);
 	}
 
 	public function create($input) {

@@ -1,5 +1,5 @@
 <?php
-    $user = Auth::user();
+    $auth_user = Auth::user();
 ?>
 
 @extends('layouts.master')
@@ -12,10 +12,10 @@
             	<li class="nav-header">
                     <div class="dropdown profile-element"> <span>
                             <span>
-                                <img alt="image" class="img-circle" src="{{ $user->avatar->url('thumbnail') }}">
+                                <img alt="image" class="img-circle" src="{{ $auth_user->avatar->url('thumbnail') }}">
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ $user->username }}</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ $auth_user->username }}</strong>
                              </span> <span class="text-muted text-xs block">Actions <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="{{ URL::to('freelancer/profile') }}">My Profile</a></li>

@@ -53,7 +53,7 @@
         <div class="footer fixed">
         	@section('footer')
 	            <div>
-	                <strong>Copyright</strong> Dripway &copy; 2014-2015
+	                <strong>Copyright</strong> helloLaravel &copy; 2014-2015
 	            </div>
             @show
         </div>

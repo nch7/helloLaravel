@@ -89,7 +89,7 @@ App::error(function(SimpleValidationException $e){
 
 App::error(function(ModelNotFoundException $e)
 {
-    return Response::make('Not Found', 404); 
+    return view::make('misc.404'); 
 });
 
 /*

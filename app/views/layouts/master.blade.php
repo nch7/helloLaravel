@@ -28,28 +28,30 @@
 		
 	    @yield('master_head')
 	</head>
-	<body class='fixed-sidebar'>
+	@section('master_body_full')
+		<body class='fixed-sidebar'>
 
-		<script>
-			notifications = {{ Notification::all()->toJson() }};
+			<script>
+				notifications = {{ Notification::all()->toJson() }};
 
-			for (var i=0; i<notifications.length; i++){
-				if(notifications[i].type=='error'){
-					toastr.error(notifications[i].message)
-				} else if(notifications[i].type=='success'){
-					toastr.success(notifications[i].message)
-				} else if(notifications[i].type=='info'){
-					toastr.info(notifications[i].message)
-				} else if(notifications[i].type=='warning'){
-					toastr.warning(notifications[i].message)
+				for (var i=0; i<notifications.length; i++){
+					if(notifications[i].type=='error'){
+						toastr.error(notifications[i].message)
+					} else if(notifications[i].type=='success'){
+						toastr.success(notifications[i].message)
+					} else if(notifications[i].type=='info'){
+						toastr.info(notifications[i].message)
+					} else if(notifications[i].type=='warning'){
+						toastr.warning(notifications[i].message)
+					}
 				}
-			}
 
-			$(function(){
-				// $('body').addClass('fixed-sidebar');
-			});
-		</script>
-		@yield('master_body')
+				$(function(){
+					// $('body').addClass('fixed-sidebar');
+				});
+			</script>
+			@yield('master_body')
 
-	</body>
+		</body>
+	@show
 </html>

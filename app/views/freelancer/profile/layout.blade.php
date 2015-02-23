@@ -30,29 +30,30 @@
 			</div>
 			
 		</div>
-		@section('feedback')
-			Feedbacks
+		<div class='feedbacks margin-bottom'>
+			<h3>Feedbacks</h3>
 			@if($user->offers->count()>0)
 				@foreach($user->offers as $offer)
 					<div class="ibox margin-bottom">
 						<div class="ibox-title">
 							<h4>
-								{{ $offer->project->title }} by {{ $offer->project->user->username }}
+								<div class="pull-left">
+									<a href="{{ URL::to('freelancer/projects',$offer->project->id) }}">{{ $offer->project->title }}</a> By <a href="{{ URL::to('freelancer',$offer->project->user->id) }}"> {{ $project->user->firstname }} {{ $project->user->lastname }}</a>
+								</div>
 							</h4>
 						</div>
 						<div class="ibox-content">
-							<p>{{ $offer->project->title }}</p>
+							<p>{{ $offer->message }}</p>
 						</div>
 					</div>
 				@endforeach
 			@else
-				User has no feedbacks
+				{{ $user->username }} has no feedbacks
 			@endif
-		@stop
-
-		<div class = 'ibox border-bottom margin-top-big'>
+		</div>
+		<div class='ibox border-bottom margin-top-big'>
 			<div class='ibox-title'>
-				<h4>Projects from this client</h4>
+				<h4>Projects posted by {{ $user->username }}</h4>
 			</div>
 			<div class = 'ibox-content'>
 					@section('projects')
@@ -63,7 +64,6 @@
 	</div>
 
 	<div class='col-xs-6'>
-		
 		<div class="ibox border-bottom">
 		  <div class="ibox-title">Freelancer details</div>
 		  <div class="ibox-content">

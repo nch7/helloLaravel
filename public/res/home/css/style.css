@@ -770,3 +770,12 @@ fieldset[disabled] .btn-primary.active {
 .pace-inactive {
   display: none;
 }
+.navbar-fixed-top {
+  background: #eee;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
+  color: #555;
+}
+.navbar-default .nav li a {
+  color:#555;
+}

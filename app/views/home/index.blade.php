@@ -11,22 +11,19 @@
 	                        <span class="icon-bar"></span>
 	                        <span class="icon-bar"></span>
 	                    </button>
-	                    <a class="navbar-brand" href="#">WEBAPPLAYERS</a>
+	                    <a class="navbar-brand" href="http://localhost:8000/login">Login</a>
 	                </div>
 	                <div id="navbar" class="navbar-collapse collapse">
 	                    <ul class="nav navbar-nav navbar-right">
-	                        <li><a class="page-scroll" href="#page-top">Home</a></li>
-	                        <li><a class="page-scroll" href="#features">Features</a></li>
 	                        <li><a class="page-scroll" href="#team">Team</a></li>
-	                        <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
-	                        <li><a class="page-scroll" href="#pricing">Pricing</a></li>
 	                        <li><a class="page-scroll" href="#contact">Contact</a></li>
 	                    </ul>
 	                </div>
 	            </div>
 	        </nav>
 	</div>
-	<div id="inSlider" class="carousel slide carousel-fade" data-ride="carousel">
+
+	<!-- <div id="inSlider" class="carousel slide carousel-fade" data-ride="carousel">
 	    <ol class="carousel-indicators">
 	        <li data-target="#inSlider" data-slide-to="0" class="active"></li>
 	        <li data-target="#inSlider" data-slide-to="1"></li>
@@ -49,7 +46,7 @@
 	                    <img src="img/laptop.png" alt="laptop"/>
 	                </div>
 	            </div>
-	            <!-- Set background for slide in css -->
+
 	            <div class="header-back one"></div>
 
 	        </div>
@@ -61,7 +58,7 @@
 	                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
 	                </div>
 	            </div>
-	            <!-- Set background for slide in css -->
+
 	            <div class="header-back two"></div>
 	        </div>
 	    </div>
@@ -73,10 +70,10 @@
 	        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 	        <span class="sr-only">Next</span>
 	    </a>
-	</div>
+	</div> -->
 
 
-	<section id="features" class="container services">
+<!-- 	<section id="features" class="container services">
 	    <div class="row">
 	        <div class="col-sm-3">
 	            <h2>Full responsive</h2>
@@ -99,9 +96,9 @@
 	            <p><a class="navy-link" href="#" role="button">Details &raquo;</a></p>
 	        </div>
 	    </div>
-	</section>
+	</section> -->
 
-	<section  class="container features">
+	<!-- <section  class="container features">
 	    <div class="row">
 	        <div class="col-lg-12 text-center">
 	            <div class="navy-line"></div>
@@ -156,7 +153,7 @@
 	            <img src="img/dashboard.png" alt="dashboard" class="img-responsive pull-right">
 	        </div>
 	    </div>
-	</section>
+	</section> -->
 
 	<section id="team" class="gray-section team">
 	    <div class="container">
@@ -222,7 +219,7 @@
 	    </div>
 	</section>
 
-	<section class="features">
+	<!-- <section class="features">
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-lg-12 text-center">
@@ -250,7 +247,7 @@
 	        </div>
 	    </div>
 
-	</section>
+	</section> -->
 
 	<section id="testimonials" class="navy-section testimonials">
 
@@ -272,7 +269,8 @@
 	    </div>
 
 	</section>
-	<section class="features">
+
+<!-- 	<section class="features">
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-lg-12 text-center">
@@ -311,8 +309,9 @@
 	        </div>
 	    </div>
 
-	</section>
-	<section id="pricing" class="pricing">
+	</section> -->
+
+	<!-- <section id="pricing" class="pricing">
 	    <div class="container">
 	        <div class="row m-b-lg">
 	            <div class="col-lg-12 text-center">
@@ -428,7 +427,7 @@
 	        </div>
 	    </div>
 
-	</section>
+	</section> -->
 
 	<section id="contact" class="gray-section contact">
 	    <div class="container">

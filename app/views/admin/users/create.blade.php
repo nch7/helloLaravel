@@ -1,5 +1,5 @@
 @extends('layouts.admin.master')
-@section('content')
+@section('body')
 
 {{ Form::open(array('route' => ['admin.user.store'], 'method' => 'POST')) }}
 <div class="form-group">
